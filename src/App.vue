@@ -7,6 +7,7 @@
       app
     >
       <v-list dense>
+
         <v-list-tile :to="{ name: 'Goals' }">
           <v-list-tile-action>
             <v-icon x-large color='orange'>control_point</v-icon>
@@ -17,6 +18,7 @@
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
         <v-list-tile :to="{ name: 'AddDaily' }">
           <v-list-tile-action>
             <v-icon x-large color='yellow'>tag_faces</v-icon>
@@ -27,6 +29,7 @@
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
         <!-- <v-list-tile :to="{ name: 'AddWeekly' }">
           <v-list-tile-action>
             <v-icon x-large color='blue'>flash_on</v-icon>
@@ -37,6 +40,7 @@
               </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile> -->
+        
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="orange" dark fixed app>

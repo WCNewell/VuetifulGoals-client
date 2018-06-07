@@ -3,32 +3,31 @@
     <v-flex xs12>
       <v-form ref="form" v-model="valid">
         <v-text-field
-          label="Title"
-          v-model="product.title"
-          :rules="titleRules"
+          label="Daily Goal"
+          v-model="dailygoal.goal"
+          :rules="goalRules"
           required
         ></v-text-field>
         <v-text-field
-          label="Description"
-          v-model="product.description"
+          label="Due Date"
+          v-model="dailygoal.due"
+          required
+          :rules="dueRules"
+        ></v-text-field>
+        <v-text-field
+          label="Done?"
+          v-model="dailygoal.done"
+          :rules="doneRules"
+          required
+        ></v-text-field>
+        <v-text-field
+          label="Comments"
+          v-model="dailygoal.comment"
           multi-line
         ></v-text-field>
         <v-text-field
-          label="Price"
-          v-model="product.price"
-          required
-          :rules="priceRules"
-          prefix="$"
-        ></v-text-field>
-        <v-text-field
-          label="Quantity"
-          v-model="product.quantity"
-          :rules="quantityRules"
-          required
-        ></v-text-field>
-        <v-text-field
           label="Image"
-          v-model="product.image"
+          v-model="dailygoal.image"
           required
           :rules="imageRules"
         ></v-text-field>
@@ -41,22 +40,20 @@
 
 <script>
 export default {
-  props: ['product', 'onSubmit'],
+  props: ['dailygoal', 'onSubmit'],
   data() {
     return {
       valid: true,
-      titleRules: [(title) => {
-        if (title.trim() === '') return 'Title must not be empty.';
+      goalRules: [(goal) => {
+        if (goal.trim() === '') return 'Goal must not be empty.';
         return true;
       }],
-      priceRules: [(price) => {
-        if (isNaN(price)) return 'Price must be a valid number.';
-        if (Number(price) <= 0) return 'Price must be greater than $0';
+      dueRules: [(due) => {
+        if (due.trim() === '') return 'Due date must not be empty.';
         return true;
       }],
-      quantityRules: [(quantity) => {
-        if (isNaN(quantity)) return 'Quantity must be a valid number.';
-        if (Number(quantity) < 0) return 'Quantity must be 0 or greater';
+      doneRules: [(done) => {
+        if (done.trim() === '') return 'Done must not be empty.';
         return true;
       }],
       imageRules: [(image) => {

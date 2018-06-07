@@ -6,6 +6,7 @@ import DailyGoal from '@/components/DailyGoal.vue'
 import AddDaily from '@/components/AddDaily'
 // import AddWeekly from '@/components/AddWeekly'
 import DailyForm from '@/components/DailyForm'
+import EditDaily from '@/components/EditDaily'
 
 Vue.use(Router)
 
@@ -21,25 +22,20 @@ export default new Router({
       name: 'DailyGoal',
       component: DailyGoal
     },
-    // {
-    //   path: '/weeklygoal',
-    //   name: 'WeeklyGoal',
-    //   component: WeeklyGoal
-    // },
     {
       path: '/add_dailygoal',
       name: 'AddDaily',
       component: AddDaily
     },
-    // {
-    //   path: '/add_weeklygoal',
-    //   name: 'AddWeekly',
-    //   component: AddWeekly
-    // },
     {
       path: '/dailyform',
       name: 'DailyForm',
       component: DailyForm
+    },
+    {
+      path: '/editdaily',
+      name: 'EditDaily',
+      component: EditDaily
     }
   ]
 })

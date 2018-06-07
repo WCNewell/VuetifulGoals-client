@@ -2,7 +2,7 @@
       <v-layout row wrap>
     <v-flex xs4 md4 v-for="dailygoal in dailygoals" :key="dailygoal.id">
       <v-card>
-        <v-card-media :src="dailygoal.image" height="400px">
+        <v-card-media :src="dailygoal.image" height="300px">
         </v-card-media>
         <v-card-title primary-title>
           <div>
@@ -35,15 +35,19 @@ export default {
     }
   },
   mounted() {
-    this.load();
+    this.load()
   },
   methods: {
     load() {
       API.getDailyGoals()
-      .then(dailygoals => {
-        this.dailygoals = dailygoals
+      .then((dailygoals) => {
+        this.dailygoals = dailygoals.dailygoals
+        console.log(this.dailygoals)
       })
     }
   }
 }
 </script>
+
+<style lang='css'>
+</style>

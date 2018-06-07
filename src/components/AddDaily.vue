@@ -1,5 +1,5 @@
 <template>
-    <DailyForm :goal="goal" :onSubmit="submit"> </DailyForm>
+    <DailyForm :dailygoal="dailygoal" :onSubmit="submit"> </DailyForm>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import API from '@/library/api'
 
 export default {
     components: {
-        AddDaily
+        DailyForm
     }, 
     data () {
         return {
@@ -23,15 +23,10 @@ export default {
     },
     methods: {
         submit () {
-                this.dailygoal.quantity = Number(this.dailygoal.quantity)
+                // this.dailygoal.due = String(this.dailygoal.due)
                 API.createDailyGoal(this.dailygoal)
-                .then(({ id }) => {
-                    this.$router.push({
-                        name: 'dailygoal',
-                        params: {
-                            id
-                        }
-                    })
+                .then(() => {
+                    this.$router.push({ name: 'Goals' })
                 })
         }
     }
