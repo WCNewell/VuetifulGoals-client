@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import API from '@/library/api'
+import API from '@/library/API'
 
 export default {
   data() {
@@ -48,6 +48,3 @@ export default {
   }
 }
 </script>
-
-<style lang='css'>
-</style>

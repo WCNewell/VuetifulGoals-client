@@ -3,7 +3,7 @@
     <v-flex xs12>
       <v-form ref="form" v-model="valid">
         <v-text-field
-          label="Daily Goal"
+          label="Goal"
           v-model="dailygoal.goal"
           :rules="goalRules"
           required
@@ -65,12 +65,12 @@ export default {
   methods: {
     submit() {
       if (this.valid) {
-        this.onSubmit();
+        this.onSubmit()
       }
     },
     clear() {
-      this.$refs.form.reset();
-    },
-  },
-};
+      this.$refs.form.reset()
+    }
+  }
+}
 </script>

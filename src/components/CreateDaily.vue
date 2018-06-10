@@ -3,8 +3,8 @@
 </template>
 
 <script>
+import API from '@/library/API'
 import DailyForm from '@/components/DailyForm'
-import API from '@/library/api'
 
 export default {
     components: {
@@ -17,14 +17,13 @@ export default {
                 due: '',
                 done: '',
                 comment: '',
-                image: '',
-            },
+                image: ''
+            }
         }
     },
     methods: {
-        submit () {
-                // this.dailygoal.due = String(this.dailygoal.due)
-                API.createDailyGoal(this.dailygoal)
+        submit() {
+             API.createDailyGoal(this.dailygoal)
                 .then(() => {
                     this.$router.push({ name: 'Goals' })
                 })

@@ -10,7 +10,7 @@
 
         <v-list-tile :to="{ name: 'Goals' }">
           <v-list-tile-action>
-            <v-icon x-large color='orange'>control_point</v-icon>
+            <v-icon x-large color='yellow'>tag_faces</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>
@@ -19,13 +19,13 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile :to="{ name: 'AddDaily' }">
+        <v-list-tile :to="{ name: 'CreateDaily' }">
           <v-list-tile-action>
-            <v-icon x-large color='yellow'>tag_faces</v-icon>
+            <v-icon x-large color='orange'>control_point</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>
-              Add Daily Goal
+              Add Goal
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -40,7 +40,7 @@
               </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile> -->
-        
+
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="orange" dark fixed app>

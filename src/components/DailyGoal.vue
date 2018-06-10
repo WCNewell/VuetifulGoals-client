@@ -10,9 +10,10 @@
             <h3 class="headline mb-0">{{ dailygoal.goal }}</h3>
             <div>{{ dailygoal.due  }}</div>
             <h4>{{ dailygoal.done }}</h4>
-            <small>{{ dailygoal.comment }}</small>
+            <h4>{{ dailygoal.comment }}</h4>
           </div>
         </v-card-title>
+        
         <v-card-actions>
           <v-btn color="info"
             :to="{
@@ -23,7 +24,11 @@
             }"
           >Edit</v-btn>
         </v-card-actions>
-        <v-btn @click="deleteDailyGoal()" color="error">Delete</v-btn>
+
+        <v-card-actions>
+          <v-btn @click="deleteDailyGoal()" color="error">Delete</v-btn>
+        </v-card-actions>
+
       </v-card>
     </v-flex>
   </v-layout>
@@ -31,7 +36,7 @@
 </template>
 
 <script>
-import API from '@/library/api'
+import API from '@/library/API'
 
 export default {
     data() {
@@ -48,18 +53,18 @@ export default {
             API.getDailyGoal (id)
             .then (dailygoal => {
                 this.dailygoal = dailygoal.dailygoal
-                console.log(this.dailygoal)
             })
         },
         deleteDailyGoal () {
             const { id } = this.$route.params
+
             API.deleteDailyGoal (id)
-                .then(() => {
-                    this.$router.push({ name: 'Goals' })
-                })
+              .then((response) => {})
+              this.$router.push({ name: 'Goals' })
         }
     }
 }
+
 </script>
 
 
