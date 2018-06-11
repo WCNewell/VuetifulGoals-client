@@ -1,13 +1,19 @@
 <template>
   <div>
-    <v-layout row wrap>
+    <v-layout>
     <v-flex xs12>
       <v-card>
-        <v-card-media :src="dailygoal.image" height="600px">
+        <v-card-media class="white--text" height="400px" :src="dailygoal.image">
+          <v-container fill-height fluid>
+            <v-layout fill-height>
+              <v-flex xs12 align-end flexbox>
+              <span class="headline">{{ dailygoal.goal }}</span>
+              </v-flex>
+            </v-layout>
+          </v-container>
         </v-card-media>
         <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">{{ dailygoal.goal }}</h3>
             <div>{{ dailygoal.due  }}</div>
             <h4>{{ dailygoal.done }}</h4>
             <h4>{{ dailygoal.comment }}</h4>
@@ -64,7 +70,6 @@ export default {
         }
     }
 }
-
 </script>
 
 

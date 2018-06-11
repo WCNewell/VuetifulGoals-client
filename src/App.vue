@@ -29,18 +29,6 @@
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-
-        <!-- <v-list-tile :to="{ name: 'AddWeekly' }">
-          <v-list-tile-action>
-            <v-icon x-large color='blue'>flash_on</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>
-              Add Weekly Goal
-              </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile> -->
-
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="orange" dark fixed app>
@@ -49,6 +37,7 @@
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
+        <!-- <img src='./static/road-to-goals.jpg' height='600px' width='auto'> -->
         <v-layout>
             <router-view></router-view>
         </v-layout>

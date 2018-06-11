@@ -22,7 +22,7 @@ export default new Router({
       component: DailyGoal
     },
     {
-      path: '/goals/create',
+      path: '/goals/entry',
       name: 'CreateDaily',
       component: CreateDaily
     },

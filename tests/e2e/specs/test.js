@@ -1,8 +1,14 @@
 // https://docs.cypress.io/api/introduction/api.html
 
-describe('My First Test', () => {
-  it('Visits the app root url', () => {
+describe('Vuetiful Goals', () => {
+  it('Landing page shows', () => {
     cy.visit('/')
-    cy.contains('h1', 'Welcome to Your Vue.js App')
+    cy.contains('Vuetiful Goals')
+    cy.contains('Goals')
+    cy.contains('Add Goal')
+  })
+  it('Goal entry form shows', () => {
+    cy.visit('/goals/entry')
+    cy.contains('Goal')
   })
 })
